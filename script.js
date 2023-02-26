@@ -102,7 +102,7 @@ function colideWall(){
 		dy *= -5;
 	}
 	else if(y + r >= canvas.height){//아래 == 게임오버
-		gameOver();
+		game_over = true;
 	}
 	
 }
@@ -209,6 +209,7 @@ function loop(){
 		alert("you win!");
 	}
 	else if(game_over == true){
+		gameOver();
 	}
 	else{
 		requestAnimationFrame(loop);//초당 60번씩 loop를 재귀호출해주는 함수.
