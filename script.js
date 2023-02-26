@@ -53,7 +53,7 @@ function init(){
 	brick(3, 8);
 	
 	window.score = 0;
-	
+	window.game_over = false;
 	loop();
 }
 
@@ -89,6 +89,7 @@ function gameOver(){
 	
 	document.location.reload();
 	alert('game over!');
+	game_over = true;
 }
 
 function colideWall(){
@@ -207,8 +208,10 @@ function loop(){
 		document.location.reload();
 		alert("you win!");
 	}
-	
-	requestAnimationFrame(loop);//초당 60번씩 loop를 재귀호출해주는 함수.
-
+	else if(game_over == true){
+	}
+	else{
+		requestAnimationFrame(loop);//초당 60번씩 loop를 재귀호출해주는 함수.
+	}
 	
 }
